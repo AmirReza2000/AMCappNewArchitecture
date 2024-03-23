@@ -26,23 +26,6 @@ internal sealed class UserConfiguration : object, Microsoft
 
 		// **************************************************
 		builder
-			.Property(current => current.Username)
-			.IsUnicode(unicode: false)
-			;
-
-		builder
-			.HasIndex(current => new { current.Username })
-			.IsUnique(unique: true)
-			;
-
-		//builder.HasIndex(current => current.Username)
-		//	.IsUnique(unique: true)
-		//	// HasFilter -> using Microsoft.EntityFrameworkCore;
-		//	.HasFilter("[Username] IS NOT NULL");
-		// **************************************************
-
-		// **************************************************
-		builder
 			.Property(current => current.CellPhoneNumber)
 			.IsUnicode(unicode: false)
 			;

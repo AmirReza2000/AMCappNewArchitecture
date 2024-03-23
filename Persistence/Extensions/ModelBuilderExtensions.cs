@@ -13,6 +13,7 @@ internal static class ModelBuilderExtensions : object
 		SeedUsers(modelBuilder: modelBuilder);
 	}
 	#endregion /Seed()
+
 	#region SeedBaseTables()
 	private static void SeedBaseTables
 		(Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
@@ -146,7 +147,7 @@ internal static class ModelBuilderExtensions : object
 		// **************************************************
 		var userProgrammer =
 			new Domain.Features.Identity.User
-			(username: "Amirreza", cellPhoneNumber: "09903333615"
+			( cellPhoneNumber: "09903333615"
 			, registerIP: "::1")
 			{
 				Ordering = 1000,
@@ -167,7 +168,7 @@ internal static class ModelBuilderExtensions : object
 		// **************************************************
 		var user1 =
 			new Domain.Features.Identity.User
-			(username: "User1111", cellPhoneNumber: "09905956472"
+			( cellPhoneNumber: "09905956472"
 			, registerIP: "::1")
 			{
 				Ordering = 1000,
@@ -188,7 +189,7 @@ internal static class ModelBuilderExtensions : object
 		// **************************************************
 		var user2 =
 			new Domain.Features.Identity.User
-			(username: "User2222", cellPhoneNumber: "09905881865"
+			( cellPhoneNumber: "09905881865"
 			, registerIP: "::1")
 			{
 				Ordering = 1000,
@@ -209,7 +210,7 @@ internal static class ModelBuilderExtensions : object
 		// **************************************************
 		var user3 =
 			new Domain.Features.Identity.User
-			(username: "User3333", cellPhoneNumber: "09205956472"
+			(cellPhoneNumber: "09205956472"
 			, registerIP: "::1")
 			{
 				Ordering = 1000,
@@ -227,5 +228,6 @@ internal static class ModelBuilderExtensions : object
 		// **************************************************
 	}
 	#endregion /SeedUsers()
+
 	#endregion /Methods
 }

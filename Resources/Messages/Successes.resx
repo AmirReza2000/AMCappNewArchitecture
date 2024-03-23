@@ -135,11 +135,14 @@
   <data name="EmailSentSuccessfully" xml:space="preserve">
     <value>ایمیل با موفقیت ارسال گردید.</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>وارد شدید.</value>
+  </data>
   <data name="PasswordChanged" xml:space="preserve">
     <value>گذرواژه شما با موفقیت تغییر پیدا کرد.</value>
   </data>
   <data name="RegistrationDone" xml:space="preserve">
-    <value>برای تکمیل ثبت نام کد ارسال شده را وارد کنید.</value>
+    <value>ثبت نام موفقیت آمیز بود لطفا برای تایید حساب صندوق اس ام اس را چک کنید.</value>
   </data>
   <data name="Updated" xml:space="preserve">
     <value>{0} با موفقیت ویرایش گردید.</value>

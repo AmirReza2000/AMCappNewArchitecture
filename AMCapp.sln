@@ -38,6 +38,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcoument", "dcoument", "{71
 		document PWA AMC.docx = document PWA AMC.docx
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{B787C008-9981-4EA8-A815-E449C71911ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{2F4DF6FE-30D3-4C80-9FAF-207C1A47F370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +88,14 @@ Global
 		{C3290D7D-3F70-4E71-9F57-57ACBCB2C09F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3290D7D-3F70-4E71-9F57-57ACBCB2C09F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3290D7D-3F70-4E71-9F57-57ACBCB2C09F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B787C008-9981-4EA8-A815-E449C71911ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B787C008-9981-4EA8-A815-E449C71911ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B787C008-9981-4EA8-A815-E449C71911ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B787C008-9981-4EA8-A815-E449C71911ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F4DF6FE-30D3-4C80-9FAF-207C1A47F370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F4DF6FE-30D3-4C80-9FAF-207C1A47F370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F4DF6FE-30D3-4C80-9FAF-207C1A47F370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F4DF6FE-30D3-4C80-9FAF-207C1A47F370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +115,7 @@ Global
 		{FA39897D-861D-48B7-8F2B-937FC2E193B3} = {3B6FD566-0CEE-40D0-97B0-1E4D48AE4395}
 		{43A4F223-C7DB-4838-9AAA-2D25F1A10C14} = {3B6FD566-0CEE-40D0-97B0-1E4D48AE4395}
 		{C3290D7D-3F70-4E71-9F57-57ACBCB2C09F} = {43A4F223-C7DB-4838-9AAA-2D25F1A10C14}
+		{B787C008-9981-4EA8-A815-E449C71911ED} = {43A4F223-C7DB-4838-9AAA-2D25F1A10C14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5326E9F-DE87-4CAF-8EBC-78EDEB7A3760}

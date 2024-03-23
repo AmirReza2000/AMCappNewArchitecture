@@ -10,31 +10,6 @@ public sealed class RegisterViewModel : object
 
     #region Properties
 
-    #region public string? Username { get; set; }
-    /// <summary>
-    /// شناسه کاربری
-    /// </summary>
-    [System.ComponentModel.DataAnnotations.Display
-        (Name = nameof(Resources.DataDictionary.Username),
-        ResourceType = typeof(Resources.DataDictionary))]
-
-    [System.ComponentModel.DataAnnotations.Required
-        (AllowEmptyStrings = false,
-        ErrorMessageResourceType = typeof(Resources.Messages.Validations),
-        ErrorMessageResourceName = nameof(Resources.Messages.Validations.Required))]
-
-    [System.ComponentModel.DataAnnotations.MaxLength
-        (length: Constants.MaxLength.Username,
-        ErrorMessageResourceType = typeof(Resources.Messages.Validations),
-        ErrorMessageResourceName = nameof(Resources.Messages.Validations.MaxLength))]
-
-    [System.ComponentModel.DataAnnotations.RegularExpression
-        (pattern: Constants.RegularExpression.Username,
-        ErrorMessageResourceType = typeof(Resources.Messages.Validations),
-        ErrorMessageResourceName = nameof(Resources.Messages.Validations.Username))]
-    public string? Username { get; set; }
-    #endregion /public string? Username { get; set; }
-
     #region public string? Password { get; set; }
     /// <summary>
     /// گذرواژه

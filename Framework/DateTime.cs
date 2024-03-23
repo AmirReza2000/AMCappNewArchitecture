@@ -18,7 +18,7 @@ public static class DateTime : object
 	public static bool TokenExpired(System.DateTime CreationDate)
 	{
 
-		if (CreationDate.AddMinutes(2) >= System.DateTime.Now)
+		if (CreationDate.AddMinutes(2) >= System.DateTime.UtcNow)
 		{
 			return false;
 		}

@@ -1,0 +1,14 @@
+﻿
+@if (MessageErrors!.Count != 0)
+{
+    <h1>tasti</h1>
+    <div class="alert alert-danger" role="alert">
+        <ul class="mb-0">
+            @foreach (var message in MessageErrors)
+            {
+                <li>@(message)</li>
+            }
+        </ul>
+    </div>
+}
+

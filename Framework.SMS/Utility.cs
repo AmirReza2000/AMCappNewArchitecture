@@ -28,6 +28,13 @@ public static class Utility : object
             token: username, token2: siteUrl,token3: key,template: setting.ResetPasswordPattern);
         return result.Status;
     }
+    public static int SendAccountVerifyLink(ISMSetting setting, string Receptor, string username, string Url)
+    {
+        Provider.ApiKey = setting.ApiKey;
+        var result = Provider.VerifyLookup(receptor: Receptor,
+            token: username, token2: Url,token3:"",  template: setting.AccountVerifyLink);
+        return result.Status;
+    }
     //public Task SendSMS(ISMSetting setting,string Receptor, string Message)
     //{
     //    var date = DateTime.Now;

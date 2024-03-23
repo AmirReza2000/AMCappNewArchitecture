@@ -115,6 +115,15 @@ namespace Resources.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to وارد شدید..
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to گذرواژه شما با موفقیت تغییر پیدا کرد..
         /// </summary>
         public static string PasswordChanged {
@@ -124,7 +133,7 @@ namespace Resources.Messages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to برای تکمیل ثبت نام کد ارسال شده را وارد کنید..
+        ///   Looks up a localized string similar to ثبت نام موفقیت آمیز بود لطفا برای تایید حساب صندوق اس ام اس را چک کنید..
         /// </summary>
         public static string RegistrationDone {
             get {

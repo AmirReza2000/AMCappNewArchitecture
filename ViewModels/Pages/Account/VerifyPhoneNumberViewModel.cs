@@ -57,25 +57,10 @@ namespace ViewModels.Pages.Account
 
         #region public string? SecurityKey{ get; set; }
 
-        [Required(AllowEmptyStrings =false)]  
-        public string? SecurityKey{ get; set; }
+        [Required(AllowEmptyStrings = false)]
+        public string? SecurityKey { get; set; }
 
         #endregion/#region public string? SecurityKey{ get; set; }
-
-        #region public string? Username { get; set; }
-        /// <summary>
-        /// شناسه کاربری
-        /// </summary>       
-
-        [System.ComponentModel.DataAnnotations.Required
-            (AllowEmptyStrings = false)]
-        [System.ComponentModel.DataAnnotations.RegularExpression
-            (pattern: Constants.RegularExpression.Username,
-            ErrorMessageResourceType = typeof(Resources.Messages.Validations),
-            ErrorMessageResourceName = nameof(Resources.Messages.Validations.Username))]
-        public string? Username { get; set; }
-        #endregion /public string? Username { get; set; }
-
         #endregion /Properties
     }
 }

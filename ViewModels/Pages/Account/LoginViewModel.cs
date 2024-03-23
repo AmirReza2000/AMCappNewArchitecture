@@ -10,9 +10,9 @@ public class LoginViewModel : object
 
 	#region Properties
 
-	#region public string? UsernameOrPhoneNumber { get; set; }
+	#region public string? PhoneNumber { get; set; }
 	[System.ComponentModel.DataAnnotations.Display
-		(Name = nameof(Resources.DataDictionary.UsernameOrPhoneNumber),
+		(Name = nameof(Resources.DataDictionary.CellPhoneNumber),
 		ResourceType = typeof(Resources.DataDictionary))]
 
 	[System.ComponentModel.DataAnnotations.Required
@@ -21,22 +21,22 @@ public class LoginViewModel : object
 		ErrorMessageResourceName = nameof(Resources.Messages.Validations.RequiredGeneric))]
 
 	[System.ComponentModel.DataAnnotations.MaxLength
-		(length: Constants.MaxLength.EmailAddress,
+		(length: Constants.MaxLength.CellPhoneNumber,
 		ErrorMessageResourceType = typeof(Resources.Messages.Validations),
 		ErrorMessageResourceName = nameof(Resources.Messages.Validations.MaxLengthGeneric))]
 
 	[System.ComponentModel.DataAnnotations.RegularExpression
-		(pattern: Constants.RegularExpression.UsernameOrPhoneNumber,
+		(pattern: Constants.RegularExpression.CellPhoneNumber,
 		ErrorMessageResourceType = typeof(Resources.Messages.Validations),
-		ErrorMessageResourceName = nameof(Resources.Messages.Validations.UsernameOrPhoneNumber))]
-	public string? UsernameOrPhoneNumber { get; set; }
-	#endregion /public string? UsernameOrPhoneNumber { get; set; }
+		ErrorMessageResourceName = nameof(Resources.Messages.Validations.CellPhoneNumber))]
+	public string? CellPhoneNumber { get; set; }
+    #endregion /public string? CellPhoneNumber { get; set; }
 
-	#region public string? Password { get; set; }
-	/// <summary>
-	/// گذرواژه
-	/// </summary>
-	[System.ComponentModel.DataAnnotations.Display
+    #region public string? Password { get; set; }
+    /// <summary>
+    /// گذرواژه
+    /// </summary>
+    [System.ComponentModel.DataAnnotations.Display
 		(Name = nameof(Resources.DataDictionary.Password),
 		ResourceType = typeof(Resources.DataDictionary))]
 
@@ -69,13 +69,6 @@ public class LoginViewModel : object
 		ResourceType = typeof(Resources.DataDictionary))]
 	public bool RememberMe { get; set; }
 	#endregion /public bool RememberMe { get; set; }
-
-	#region public string? ReturnUrl { get; set; }
-	/// <summary>
-	/// جایی که کاربر تمایل داشته که وارد آن شود
-	/// </summary>
-	public string? ReturnUrl { get; set; }
-	#endregion /public string? ReturnUrl { get; set; }
 
 	#endregion /Properties
 }

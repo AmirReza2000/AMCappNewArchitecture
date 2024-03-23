@@ -121,7 +121,13 @@
     <value>متاسفانه شما دسترسی کافی برای مشاهده این صفحه را ندارید!</value>
   </data>
   <data name="AlreadyExists" xml:space="preserve">
-    <value>{0} تکراری است! لطفا از {0} دیگری استفاده نمایید.</value>
+    <value>این کاربر قبلا ثبت نام کرده است.</value>
+  </data>
+  <data name="BadGatewayError" xml:space="preserve">
+    <value>خطای ناخواسته ای رخ داد لطفا چند دقیقه دیگر تلاش کنید یا با پشتیانی تماس بگیرید.</value>
+  </data>
+  <data name="BadRequest" xml:space="preserve">
+    <value>خطای ناشناخته ای رخ داد.</value>
   </data>
   <data name="CaptchaImage" xml:space="preserve">
     <value>شما باید فیلد کد امنیتی را با دقت و با ارقام انگلیسی تکمیل نمایید!</value>
@@ -156,6 +162,9 @@
   <data name="ItemsNotFound" xml:space="preserve">
     <value>اطلاعاتی یافت نشد!</value>
   </data>
+  <data name="ModelStateIsInVaild" xml:space="preserve">
+    <value>فرمت ورود اطلاعات اشتباه است.</value>
+  </data>
   <data name="NewPasswordCanNotBeSameAsCurrentPassword" xml:space="preserve">
     <value>گذرواژه جدید نمی‌تواند با گذرواژه جاری یکسان باشد!</value>
   </data>
@@ -176,6 +185,9 @@
   </data>
   <data name="ThereIsNotAnyUserWithThisUsernameOrPhoneNumber" xml:space="preserve">
     <value>در سامانه، هیچ کاربری با چنین شناسه‌کاربری یا شماره تلفن همراهی وجود ندارد!</value>
+  </data>
+  <data name="TokenExpired" xml:space="preserve">
+    <value>کد اعتبارسنجی شما منقضی شده است برای ارسال مجدد اعطلاعات خواسته شده را کامل کنید.</value>
   </data>
   <data name="UnableTo" xml:space="preserve">
     <value>در حال حاضر امکان {0} این {1} وجود ندارد!</value>

@@ -11,6 +11,7 @@ namespace Framework.SMS
         public string ApiKey { get; set; }
         public string OtpPattern { get; set; }
         public string ResetPasswordPattern { get; set;}
+        public string AccountVerifyLink { get; set; }
 
     }
 }

@@ -1,0 +1,23 @@
+﻿@using Blazored.Toast
+@using Blazored.Toast.Configuration
+@inherits LayoutComponentBase
+<body>
+
+        <AuthorizeView>
+            <NotAuthorized>
+            <BlazoredToasts Position="ToastPosition.TopRight"
+                            Timeout="10"
+                            ShowProgressBar="@true"
+                            ShowCloseButton="@true"
+                            MaxToastCount="10">
+                <CloseButtonContent>
+                    <div>
+                        <span class="myCloseButtonStyleClass">&times;</span>
+                    </div>
+                </CloseButtonContent>
+            </BlazoredToasts>
+                @Body
+            </NotAuthorized>
+        </AuthorizeView>
+
+</body>

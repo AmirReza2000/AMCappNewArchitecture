@@ -57,18 +57,18 @@ public class JwtTokenService
     #endregion /Properties
 
     #region public string CreateToken(List<Claim> claims)
-    public string CreateToken(List<Claim> claims)
+    public string? CreateToken(List<Claim> claims)
     {
         var securityKey = new SymmetricSecurityKey(key:
            Encoding.ASCII.GetBytes(_applicationSettings.tokenProfile.SecretForKey!));
 
         var signingCredentials = new SigningCredentials(
             key: securityKey,
-            algorithm: _applicationSettings.tokenProfile.SecurityAlgorithms!);
+            algorithm: SecurityAlgorithms.HmacSha256);
 
         var jwtSecurityToken = new JwtSecurityToken(
-            // issuer: _applicationSettings.tokenProfile.Issuer!,
-            //audience: _applicationSettings.tokenProfile.Audience!,
+            issuer: _applicationSettings.tokenProfile.Issuer!,
+            audience: _applicationSettings.tokenProfile.Audience!,
             //notBefore: DateTime.UtcNow,
             claims: claims,
             expires: _applicationSettings.tokenProfile.ExpiryDate,

@@ -47,11 +47,12 @@ public static class CommonRouting : object
 	/// Login
 	/// </summary>
 	public const string Login = "/Account/Login";
+	public const string LoginApi = "Api/Account/Login";
 
-	/// <summary>
-	/// Logout
-	/// </summary>
-	public const string Logout = "/Account/Logout";
+    /// <summary>
+    /// Logout
+    /// </summary>
+    public const string Logout = "/Account/Logout";
 
 	/// <summary>
 	/// Google Login
@@ -62,6 +63,7 @@ public static class CommonRouting : object
 	/// Register
 	/// </summary>
 	public const string Register = "/Account/Register";
+	public const string RegisterApi = "Api/Account/Register";
 
     /// <summary>
     /// Verify PhoneNumber
@@ -80,5 +82,21 @@ public static class CommonRouting : object
     public const string
         ResendVerifyPhoneNumberToken =
         "/Account/ResendVerifyPhoneNumberToken";
-
+    /// <summary>
+    /// AccountVerify
+    /// </summary>
+    public const string
+        AccountVerify =
+        "/Account/AccountVerify"; 
+	public const string
+        AccountVerifyApi =
+        "api/Account/AccountVerify";
+    /// <summary>
+    /// Base Api Url
+    /// </summary>
+    public const string BaseApiUrl = "https://localhost:7017";
+    /// <summary>
+    /// Base Client Url
+    /// </summary>
+    public const string BaseClientUrl = "https://localhost:7004";
 }

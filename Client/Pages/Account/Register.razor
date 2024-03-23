@@ -1,0 +1,100 @@
+﻿@* @layout Client.Layout.AccountLayout *@
+@page "/account/register"
+@using Framework
+<PageTitle>ثبت نام</PageTitle>
+
+<EditForm Model="RegisterModel" OnSubmit="HandleRegistration">
+    <DataAnnotationsValidator />
+
+    <div class="container my-0 my-sm-1 my-md-3 my-lg-5">
+
+        <div class="row">
+
+            <div class="col-12 p-3 col-md-8 offset-md-2 p-md-4
+                col-lg-6 offset-lg-3 p-lg-5 border border-2 rounded-3 shadow-lg">
+
+                <fieldset>
+                    <legend class="text-center">
+                        ثبت نام
+                    </legend>
+                    <DisplayPageMessages @ref=displayPageMessages></DisplayPageMessages>                  
+                    <div class="mb-3">
+                        <label for="CellPhoneNumber" class="form-label">@(DataDictionary.CellPhoneNumber)</label> (باید تایید شود)
+
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-phone-fill"></i></div>
+                            <InputText @bind-Value="RegisterModel.CellPhoneNumber" class="form-control" dir="ltr" />
+                        </div>
+
+                        <span for="CellPhoneNumber" class="text-danger">
+                            <ValidationMessage For="@(() => RegisterModel.CellPhoneNumber)" />
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">@(DataDictionary.Password)</label>
+
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                            <InputText @bind-Value="RegisterModel.Password" type="password" class="form-control" dir="ltr" />
+                        </div>
+
+                        <span for="Password" class="text-danger">
+                            <ValidationMessage For="@(() => RegisterModel.Password)" />
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ConfirmPassword" class="form-label">@(DataDictionary.ConfirmPassword)</label>
+
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                            <InputText @bind-Value="RegisterModel.ConfirmPassword" class="form-control" dir="ltr" />
+                        </div>
+
+                        <span for="ConfirmPassword" class="text-danger">
+                            <ValidationMessage For="@(() => RegisterModel.ConfirmPassword)" />
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">
+                            @(Resources.ButtonCaptions.Register)
+                        </button>
+                        <button type="reset" class="btn btn-secondary">
+                            @(Resources.ButtonCaptions.Reset)
+                        </button>
+
+                    </div>
+                </fieldset>
+
+                <hr class="mt-4" />
+
+                <div class="text-center">
+                    <NavLink style="text-decoration:none;" href="@Constants.CommonRouting.Login"
+                             Match="NavLinkMatch.All">@(ButtonCaptions.Login)</NavLink>
+                    |
+                    <NavLink style="text-decoration:none;" href=""
+                             Match="NavLinkMatch.All">@(ButtonCaptions.Home)</NavLink>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</EditForm>
+<ModalDialog @ref=ModalDialog>
+    <ChildContent>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">تایید حساب</h5>
+        </div>
+        <div class="modal-body">
+            @Resources.Messages.Successes.RegistrationDone
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @onclick=@(()=>_navigation!.NavigateTo("/"))>بستن</button>
+        </div>
+    </ChildContent>
+</ModalDialog>

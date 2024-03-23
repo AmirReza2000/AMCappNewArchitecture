@@ -1,0 +1,93 @@
+﻿@page "/account/login/{returnUrl?}"
+
+<PageTitle>ورود</PageTitle>
+
+<EditForm Model="_viewModel" OnValidSubmit="LoginAsync">
+    <DataAnnotationsValidator />
+    <div class="container my-0 my-sm-1 my-md-3 my-lg-5">
+        <div class="row">
+            <div class="col-12 p-3   col-md-8 offset-md-2 p-md-4   col-lg-6 offset-lg-3 p-lg-5   border border-2 rounded-3 shadow-lg">
+                <fieldset>
+                    <legend class="text-center">
+                        ورود
+                    </legend>
+
+                    <hr />
+                    <DisplayPageMessages @ref=displayPageMessages></DisplayPageMessages>
+
+                    <div class="mb-3">
+
+                        <label class="form-label" for="_viewModel_UsernameOrPhoneNumber">
+                            @(Resources.DataDictionary.CellPhoneNumber)
+                        </label>
+
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                            <InputText @bind-Value="_viewModel.CellPhoneNumber" class="form-control" dir="ltr" />
+                        </div>
+
+                        <span for="CellPhoneNumber" class="text-danger">
+                            <ValidationMessage For="@(() => _viewModel.CellPhoneNumber)" />
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">@(DataDictionary.Password)</label>
+
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                            <InputText @bind-Value="_viewModel.Password" type="password" class="form-control" dir="ltr" />
+                        </div>
+
+                        <span for="Password" class="text-danger">
+                            <ValidationMessage For="@(() => _viewModel.Password)" />
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <InputCheckbox @bind-Value="_viewModel.RememberMe" class="form-check-input" />
+                            <label for="_viewModel.RememberMe" 
+                            class="form-check-label"> @(DataDictionary.RememberMe)</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">@(Resources.ButtonCaptions.Login)</button>
+                        <button type="reset" class="btn btn-secondary">@(Resources.ButtonCaptions.Reset)</button>
+                    </div>
+                </fieldset>
+
+                <hr class="mt-4" />
+
+                <div class="text-center">
+                    <a asp-page="@(Constants.CommonRouting.RootIndex)" class="text-decoration-none">
+                        @(Resources.ButtonCaptions.Home)
+                    </a>
+
+
+                    <text>| </text>
+                    <a href="@(Constants.CommonRouting.Register)" class="text-decoration-none">
+                        @(Resources.ButtonCaptions.Register)
+                    </a>
+
+
+                    |
+                    <a href="/Account/ForgotPassword" class="text-decoration-none">
+                        @(Resources.PageTitles.ForgotPassword)
+                    </a>
+
+                    <br />
+
+                    <a href="@(Constants.CommonRouting.ResendVerifyPhoneNumberToken)"
+                       class="text-decoration-none">
+                        @(Resources.PageTitles.ResendVerifyPhoneNumberToken)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</EditForm>
+
+

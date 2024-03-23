@@ -1,0 +1,22 @@
+﻿@page "/account/logout"
+@inject NavigationManager navigationManager
+@inject CustomAuthenticationStateProvider customAuthenticationStateProvider
+
+<PageTitle>Logout</PageTitle>
+
+<h1>
+	Logout
+</h1>
+
+<button type="button" class="btn btn-danger" @onclick="@LogoutAsync">Logout</button>
+
+@code
+{
+	public async Task LogoutAsync()
+	{
+		await customAuthenticationStateProvider.LogoutAsync();
+
+		navigationManager.NavigateTo
+			(uri: string.Empty, forceLoad: false);
+	}
+}

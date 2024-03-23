@@ -10,11 +10,10 @@ public class User :
     Domain.Seedwork.Abstractions.IEntityHasUpdateDateTime
 {
     #region Constructor
-    public User(string username, string cellPhoneNumber,
+    public User( string cellPhoneNumber,
         string registerIP) : base()
     {
         Ordering = 10_000;
-        Username = username;
         CellPhoneNumber = cellPhoneNumber;
         RegisterIP = registerIP;
         UpdateDateTime = InsertDateTime;
@@ -100,24 +99,24 @@ public class User :
     #endregion /public int Ordering { get; set; }
 
 
-    #region public string Username { get; set; }
-    /// <summary>
-    /// شناسه کاربری
-    /// </summary>
-    [System.ComponentModel.DataAnnotations.Display
-        (ResourceType = typeof(Resources.DataDictionary),
-        Name = nameof(Resources.DataDictionary.Username))]
+ //   #region public string Username { get; set; }
+ //   /// <summary>
+ //   /// شناسه کاربری
+ //   /// </summary>
+ //   [System.ComponentModel.DataAnnotations.Display
+ //       (ResourceType = typeof(Resources.DataDictionary),
+ //       Name = nameof(Resources.DataDictionary.Username))]
 
-    [System.ComponentModel.DataAnnotations.MaxLength
-        (length: Constants.MaxLength.Username,
-        ErrorMessageResourceType = typeof(Resources.Messages.Validations),
-        ErrorMessageResourceName = nameof(Resources.Messages.Validations.MaxLength))]
-	[System.ComponentModel.DataAnnotations.RegularExpression
-		(pattern: Constants.RegularExpression.Username,
-		ErrorMessageResourceType = typeof(Resources.Messages.Validations),
-		ErrorMessageResourceName = nameof(Resources.Messages.Validations.Username))]
-	public string Username { get; set; }
-    #endregion /public string Username { get; set; }
+ //   [System.ComponentModel.DataAnnotations.MaxLength
+ //       (length: Constants.MaxLength.Username,
+ //       ErrorMessageResourceType = typeof(Resources.Messages.Validations),
+ //       ErrorMessageResourceName = nameof(Resources.Messages.Validations.MaxLength))]
+	//[System.ComponentModel.DataAnnotations.RegularExpression
+	//	(pattern: Constants.RegularExpression.Username,
+	//	ErrorMessageResourceType = typeof(Resources.Messages.Validations),
+	//	ErrorMessageResourceName = nameof(Resources.Messages.Validations.Username))]
+	//public string Username { get; set; }
+ //   #endregion /public string Username { get; set; }
 
     #region public string RegisterIP { get; set; }
     /// <summary>

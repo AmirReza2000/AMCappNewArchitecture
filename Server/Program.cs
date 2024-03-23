@@ -1,6 +1,15 @@
+using Constants;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using NLog;
 using NLog.Web;
+using Infrastructure.Middlewares;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Services.Features.Identity;
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
@@ -16,14 +25,34 @@ var applicationSettings =
 // **************************************************
 
 // **************************************************
+builder.Services.AddCors(policy =>
+{
+    policy.AddPolicy("_myAllowSpecificOrigins", builder =>
+     builder.WithOrigins(CommonRouting.BaseClientUrl, "http://localhost:5292")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials());
+});
 // **************************************************
-builder.Services
-    .AddAuthentication(defaultScheme:
-        Infrastructure.Security.Constants.Scheme.Default)
 
-    .AddCookie(authenticationScheme:
-        Infrastructure.Security.Constants.Scheme.Default)
-        ;
+// **************************************************
+// **************************************************
+builder.Services.AddAuthentication(o =>
+{
+    o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.RequireHttpsMetadata = false;
+    o.SaveToken = true;
+    o.Audience = applicationSettings!.tokenProfile.Audience;
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.ASCII.GetBytes(applicationSettings!.tokenProfile.SecretForKey)),
+    };
+});
 // **************************************************
 // **************************************************
 
@@ -76,7 +105,38 @@ builder.Services
 builder.Services
     .AddHttpContextAccessor();
 //  *************************************************
-builder.Services.AddControllers();
+builder.Services.AddControllers().
+        ConfigureApiBehaviorOptions(setupAction: setupAction =>
+    setupAction.InvalidModelStateResponseFactory = context =>
+    {
+        // create a validation problem details object
+        var problemDetailsFactory = context.HttpContext.RequestServices
+            .GetRequiredService<ProblemDetailsFactory>();
+
+        var validationProblemDetails = problemDetailsFactory
+            .CreateValidationProblemDetails(
+                context.HttpContext,
+                context.ModelState);
+
+        // add additional info not added by default
+        //validationProblemDetails.Detail =
+        //    "See the errors field for details.";
+        validationProblemDetails.Instance =
+            context.HttpContext.Request.Path;
+
+        // report invalid model state responses as validation issues
+     
+        validationProblemDetails.Status =
+            StatusCodes.Status422UnprocessableEntity;
+        validationProblemDetails.Title =
+            "ModelStateIsInVaild";
+
+        return new UnprocessableEntityObjectResult(
+            validationProblemDetails)
+        {
+            ContentTypes = { ContentTypes.UnprocessableEntity }
+        };
+    });
 //  *************************************************
 builder.Services.AddSwaggerGen();
 //  *************************************************
@@ -86,6 +146,9 @@ builder.Services
 builder.Services
     .AddScoped<Services.Features.Identity.UserNotificationService>();
 // **************************************************
+builder.Services
+    .AddScoped<JwtTokenService>();
+
 builder.Services
     .AddScoped<Infrastructure.Security.UserManagerService>();
 
@@ -99,11 +162,14 @@ var app = builder.Build();
 // **************************************************
 //app.UseGlobalException();
 // **************************************************
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
 
-}
+app.UseGlobalException();
+//if (!app.Environment.IsDevelopment())
+//{
+//    app.UseExceptionHandler("/Error");
+
+//}
+
 // **************************************************
 // **************************************************
 app.UseSwagger();
@@ -113,6 +179,8 @@ app.UseSwaggerUI();
 app.UseHsts();
 // **************************************************
 app.UseHttpsRedirection();
+// **************************************************
+app.UseCors("_myAllowSpecificOrigins");
 // **************************************************
 app.UseStaticFiles();
 // **************************************************

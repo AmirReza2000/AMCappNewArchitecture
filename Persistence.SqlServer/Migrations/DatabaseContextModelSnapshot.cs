@@ -17,7 +17,7 @@ namespace Persistence.SqlServer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.1")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Proxies:ChangeTracking", false)
                 .HasAnnotation("Proxies:CheckEquality", false)
                 .HasAnnotation("Proxies:LazyLoading", true)
@@ -74,15 +74,15 @@ namespace Persistence.SqlServer.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c558b71f-dca1-477b-9728-58f3e5081fc1"),
+                            Id = new Guid("120c6ba8-50c4-4c19-ae4b-705d770323c5"),
                             Code = 1100,
-                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(1896), new TimeSpan(0, 3, 30, 0, 0)),
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(161), new TimeSpan(0, 3, 30, 0, 0)),
                             IsActive = true,
                             IsSynced = false,
                             IsTestData = false,
                             Ordering = 10000,
                             Type = 0,
-                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(1896), new TimeSpan(0, 3, 30, 0, 0))
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(161), new TimeSpan(0, 3, 30, 0, 0))
                         });
                 });
 
@@ -143,54 +143,54 @@ namespace Persistence.SqlServer.Migrations
                         new
                         {
                             Id = new Guid("29d863fe-8504-4a9e-8cd2-8efc2bfaaee2"),
-                            BaseTableId = new Guid("c558b71f-dca1-477b-9728-58f3e5081fc1"),
+                            BaseTableId = new Guid("120c6ba8-50c4-4c19-ae4b-705d770323c5"),
                             Code = 0,
-                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2146), new TimeSpan(0, 3, 30, 0, 0)),
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(321), new TimeSpan(0, 3, 30, 0, 0)),
                             IsActive = true,
                             IsSynced = false,
                             IsTestData = false,
                             KeyName = "SimpleUser",
                             Ordering = 1000,
-                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2146), new TimeSpan(0, 3, 30, 0, 0))
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(321), new TimeSpan(0, 3, 30, 0, 0))
                         },
                         new
                         {
                             Id = new Guid("c2539a70-ad1c-4c89-8bea-eaeb81615ff9"),
-                            BaseTableId = new Guid("c558b71f-dca1-477b-9728-58f3e5081fc1"),
+                            BaseTableId = new Guid("120c6ba8-50c4-4c19-ae4b-705d770323c5"),
                             Code = 300,
-                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2216), new TimeSpan(0, 3, 30, 0, 0)),
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(361), new TimeSpan(0, 3, 30, 0, 0)),
                             IsActive = true,
                             IsSynced = false,
                             IsTestData = false,
                             KeyName = "Administrator",
                             Ordering = 4000,
-                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2216), new TimeSpan(0, 3, 30, 0, 0))
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(361), new TimeSpan(0, 3, 30, 0, 0))
                         },
                         new
                         {
                             Id = new Guid("210262a3-b878-4fea-ae21-1cd3be57d355"),
-                            BaseTableId = new Guid("c558b71f-dca1-477b-9728-58f3e5081fc1"),
+                            BaseTableId = new Guid("120c6ba8-50c4-4c19-ae4b-705d770323c5"),
                             Code = 400,
-                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2259), new TimeSpan(0, 3, 30, 0, 0)),
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(379), new TimeSpan(0, 3, 30, 0, 0)),
                             IsActive = true,
                             IsSynced = false,
                             IsTestData = false,
                             KeyName = "ApplicationOwner",
                             Ordering = 5000,
-                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2259), new TimeSpan(0, 3, 30, 0, 0))
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(379), new TimeSpan(0, 3, 30, 0, 0))
                         },
                         new
                         {
                             Id = new Guid("b7bb7615-1d74-452c-a3a0-e85076b04c20"),
-                            BaseTableId = new Guid("c558b71f-dca1-477b-9728-58f3e5081fc1"),
+                            BaseTableId = new Guid("120c6ba8-50c4-4c19-ae4b-705d770323c5"),
                             Code = 900,
-                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2364), new TimeSpan(0, 3, 30, 0, 0)),
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(397), new TimeSpan(0, 3, 30, 0, 0)),
                             IsActive = true,
                             IsSynced = false,
                             IsTestData = false,
                             KeyName = "Programmer",
                             Ordering = 6000,
-                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2364), new TimeSpan(0, 3, 30, 0, 0))
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(397), new TimeSpan(0, 3, 30, 0, 0))
                         });
                 });
 
@@ -269,7 +269,6 @@ namespace Persistence.SqlServer.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasMaxLength(44)
                         .IsUnicode(false)
                         .HasColumnType("varchar(44)");
@@ -288,12 +287,6 @@ namespace Persistence.SqlServer.Migrations
                     b.Property<DateTimeOffset>("UpdateDateTime")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CellPhoneNumber")
@@ -305,28 +298,72 @@ namespace Persistence.SqlServer.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.HasIndex("Username")
-                        .IsUnique();
-
                     b.ToTable("Users");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d2e07f37-f8c7-4328-87ab-85ee4bf61dde"),
-                            CellPhoneNumber = "+989903333615",
-                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2410), new TimeSpan(0, 3, 30, 0, 0)),
+                            Id = new Guid("335d69bd-71af-48be-a998-ea6b781a6401"),
+                            CellPhoneNumber = "09903333615",
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(418), new TimeSpan(0, 3, 30, 0, 0)),
                             IsActive = true,
                             IsCellPhoneNumberVerified = true,
                             IsUndeletable = true,
-                            LastChangePasswordDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(3111), new TimeSpan(0, 3, 30, 0, 0)),
+                            LastChangePasswordDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(556), new TimeSpan(0, 3, 30, 0, 0)),
                             Ordering = 1000,
-                            Password = "yiWZY9ZeObt6nMoNLcILU33J0TGH5kO613g+cwKtqFU=",
+                            Password = "aeLSS3ibnGMK3yHluBGVdWDZWKt/AT0qtfbblLEDVkY=",
                             RegisterIP = "::1",
                             RoleId = new Guid("b7bb7615-1d74-452c-a3a0-e85076b04c20"),
-                            SecurityKey = new Guid("00000000-0000-0000-0000-000000000000"),
-                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 1, 20, 15, 55, 51, 246, DateTimeKind.Unspecified).AddTicks(2410), new TimeSpan(0, 3, 30, 0, 0)),
-                            Username = "Amirreza"
+                            SecurityKey = new Guid("326f8ede-eb0d-4e2e-ba3b-3e08a204a194"),
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(418), new TimeSpan(0, 3, 30, 0, 0))
+                        },
+                        new
+                        {
+                            Id = new Guid("542be3a5-fece-4e3c-98e7-b6e930603367"),
+                            CellPhoneNumber = "09905956472",
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(594), new TimeSpan(0, 3, 30, 0, 0)),
+                            IsActive = true,
+                            IsCellPhoneNumberVerified = true,
+                            IsUndeletable = true,
+                            LastChangePasswordDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(609), new TimeSpan(0, 3, 30, 0, 0)),
+                            Ordering = 1000,
+                            Password = "0cMQPZLYG+DUWiIBTlivf/Jp5g+Y7BRnW/uTnTdjSWE=",
+                            RegisterIP = "::1",
+                            RoleId = new Guid("b7bb7615-1d74-452c-a3a0-e85076b04c20"),
+                            SecurityKey = new Guid("b371ae0c-8d6f-4da6-9e94-21a07ed76734"),
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(594), new TimeSpan(0, 3, 30, 0, 0))
+                        },
+                        new
+                        {
+                            Id = new Guid("cec20a1a-f4d3-4381-abcb-10e24435bfe3"),
+                            CellPhoneNumber = "09905881865",
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(631), new TimeSpan(0, 3, 30, 0, 0)),
+                            IsActive = true,
+                            IsCellPhoneNumberVerified = true,
+                            IsUndeletable = true,
+                            LastChangePasswordDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(640), new TimeSpan(0, 3, 30, 0, 0)),
+                            Ordering = 1000,
+                            Password = "0cMQPZLYG+DUWiIBTlivf/Jp5g+Y7BRnW/uTnTdjSWE=",
+                            RegisterIP = "::1",
+                            RoleId = new Guid("b7bb7615-1d74-452c-a3a0-e85076b04c20"),
+                            SecurityKey = new Guid("c12b4a5a-3557-4552-8143-e9d832d57f06"),
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(631), new TimeSpan(0, 3, 30, 0, 0))
+                        },
+                        new
+                        {
+                            Id = new Guid("9802378a-eba8-44f8-9b15-c2f0e305d67a"),
+                            CellPhoneNumber = "09205956472",
+                            InsertDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(659), new TimeSpan(0, 3, 30, 0, 0)),
+                            IsActive = true,
+                            IsCellPhoneNumberVerified = false,
+                            IsUndeletable = true,
+                            LastChangePasswordDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(668), new TimeSpan(0, 3, 30, 0, 0)),
+                            Ordering = 1000,
+                            Password = "0cMQPZLYG+DUWiIBTlivf/Jp5g+Y7BRnW/uTnTdjSWE=",
+                            RegisterIP = "::1",
+                            RoleId = new Guid("b7bb7615-1d74-452c-a3a0-e85076b04c20"),
+                            SecurityKey = new Guid("f67db87d-0942-44e0-a7a8-623fa5bcef12"),
+                            UpdateDateTime = new DateTimeOffset(new DateTime(2024, 3, 14, 15, 22, 28, 789, DateTimeKind.Unspecified).AddTicks(659), new TimeSpan(0, 3, 30, 0, 0))
                         });
                 });
 

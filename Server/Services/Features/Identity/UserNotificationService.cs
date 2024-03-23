@@ -1,4 +1,5 @@
-﻿using Domain.Features.Identity;
+﻿using Constants;
+using Domain.Features.Identity;
 using Infrastructure.Settings;
 
 namespace Services.Features.Identity;
@@ -37,6 +38,17 @@ public class UserNotificationService
         Framework.SMS.
             Utility.SendResetPasswordToken(setting: _applicationSettings.sMSetting,
                 Receptor: phoneNumber, username: username, siteUrl: siteUrl!, key: key);
+    }
+    #endregion /SendResetPasswordTokenToPhoneNumber()
+
+    #region SendResetPasswordTokenToPhoneNumber(string phoneNumber,string key)
+    public void SendAccountVerifyLink(string phoneNumber,string key)
+    {
+        var Url =$"{CommonRouting.BaseClientUrl
+            +CommonRouting.AccountVerify}/{key}/{phoneNumber}";
+        Framework.SMS.
+            Utility.SendAccountVerifyLink(setting: _applicationSettings.sMSetting,
+                Receptor: phoneNumber, username: "name", Url: Url);
     }
     #endregion /SendResetPasswordTokenToPhoneNumber()
     #endregion /Methods

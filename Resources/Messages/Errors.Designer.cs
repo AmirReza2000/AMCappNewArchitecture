@@ -70,11 +70,29 @@ namespace Resources.Messages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} تکراری است! لطفا از {0} دیگری استفاده نمایید..
+        ///   Looks up a localized string similar to این کاربر قبلا ثبت نام کرده است..
         /// </summary>
         public static string AlreadyExists {
             get {
                 return ResourceManager.GetString("AlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطای ناخواسته ای رخ داد لطفا چند دقیقه دیگر تلاش کنید یا با پشتیانی تماس بگیرید..
+        /// </summary>
+        public static string BadGatewayError {
+            get {
+                return ResourceManager.GetString("BadGatewayError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطای ناشناخته ای رخ داد..
+        /// </summary>
+        public static string BadRequest {
+            get {
+                return ResourceManager.GetString("BadRequest", resourceCulture);
             }
         }
         
@@ -178,6 +196,15 @@ namespace Resources.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to فرمت ورود اطلاعات اشتباه است..
+        /// </summary>
+        public static string ModelStateIsInVaild {
+            get {
+                return ResourceManager.GetString("ModelStateIsInVaild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to گذرواژه جدید نمی‌تواند با گذرواژه جاری یکسان باشد!.
         /// </summary>
         public static string NewPasswordCanNotBeSameAsCurrentPassword {
@@ -237,6 +264,15 @@ namespace Resources.Messages {
         public static string ThereIsNotAnyUserWithThisUsernameOrPhoneNumber {
             get {
                 return ResourceManager.GetString("ThereIsNotAnyUserWithThisUsernameOrPhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کد اعتبارسنجی شما منقضی شده است برای ارسال مجدد اعطلاعات خواسته شده را کامل کنید..
+        /// </summary>
+        public static string TokenExpired {
+            get {
+                return ResourceManager.GetString("TokenExpired", resourceCulture);
             }
         }
         
