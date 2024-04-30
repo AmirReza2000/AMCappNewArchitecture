@@ -98,5 +98,5 @@ public static class CommonRouting : object
     /// <summary>
     /// Base Client Url
     /// </summary>
-    public const string BaseClientUrl = "https://localhost:7004";
+    public const string BaseClientUrl = "https://localhost:7005";
 }

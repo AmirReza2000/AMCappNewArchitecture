@@ -1,0 +1,94 @@
+﻿{
+  "system": {
+    "iphon": "DISABLE",
+    "elevator": "DISABLE",
+    "camera": "ENABLE",
+    "security_system": "OFF",
+    "security_alarm": "OFF",
+    "zc": "ON",
+    "hvac": "DISABLE",
+    "temp": "27°C",
+    "hum": "26%",
+    "privat_key": "st1109"
+  },
+  "rooms": [
+    {
+      "name": "پذیرایی",
+      "imgq": "living_room"
+    },
+    {
+      "name": "آشپزخانه",
+      "imgq": "kitchen"
+    },
+    {
+      "name": "تاسیسات",
+      "imgq": "engine_room"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "آلارم",
+      "imgq": "siren",
+      "madule": "M0",
+      "output": "Y0",
+      "sts": "OFF",
+      "spaceQ": "تاسیسات"
+    },
+    {
+      "name": "هالوژن",
+      "imgq": "lamp",
+      "madule": "M1",
+      "output": "Y1",
+      "sts": "ON",
+      "spaceQ": "آشپزخانه"
+    },
+    {
+      "name": "نور مخفی",
+      "imgq": "lamp",
+      "madule": "M2",
+      "output": "Y0",
+      "sts": "OFF",
+      "spaceQ": "پذیرایی"
+    },
+    {
+      "name": "نور مخفی دوم",
+      "imgq": "lamp",
+      "madule": "M2",
+      "output": "Y1",
+      "sts": "ON",
+      "spaceQ": "پذیرایی"
+    },
+    {
+      "name": "لوستر",
+      "imgq": "lustr",
+      "madule": "M3",
+      "output": "Y0",
+      "sts": "ON",
+      "spaceQ": "پذیرایی"
+    },
+    {
+      "name": "هالوژن اول",
+      "imgq": "lamp",
+      "madule": "M3",
+      "output": "Y1",
+      "sts": "OFF",
+      "spaceQ": "پذیرایی"
+    },
+    {
+      "name": "هالوژن دوم",
+      "imgq": "lamp",
+      "madule": "M3",
+      "output": "Y2",
+      "sts": "OFF",
+      "spaceQ": "پذیرایی"
+    },
+    {
+      "name": "شیر گاز",
+      "imgq": "valve_close",
+      "madule": "M0",
+      "output": "P0",
+      "sts": "OFF",
+      "spaceQ": "تاسیسات"
+    }
+  ]
+}

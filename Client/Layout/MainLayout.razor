@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime Js
 @using Blazored.Toast
 @using Blazored.Toast.Configuration
 <BlazoredToasts Position="ToastPosition.BottomRight"
@@ -12,28 +13,136 @@
         </div>
     </CloseButtonContent>
 </BlazoredToasts>
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
-    <main>
-        <div class="top-row px-4">
+<header class="header">
+    <div class="section-menu">
+        <div class="section-menu-left">
+            <button>
+                <img class="logo-img" src="template/icons/back.svg">
+            </button>
             <AuthorizeView>
                 <Authorized>
                     Hello, @context.User.Identity?.Name!
-                    <a href="@Constants.CommonRouting.Logout">Logout
+                    <a href="@Constants.CommonRouting.Logout">
+                        Logout
                     </a>
-                    
+
                 </Authorized>
                 <NotAuthorized>
                     <a href="@Constants.CommonRouting.Login">Login</a>
                 </NotAuthorized>
             </AuthorizeView>
         </div>
+        <div class="section-menu-right">
+            <button @onclick="()=> FullScreen()">
+                <img src="template/icons/cellular_network.svg" />
+            </button>
+            <button>
+                <img src="template/icons/microphone.svg" />
+            </button>
+            <button>
+                <img src="template/icons/menu_vertical.svg" />
+            </button>
+        </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    </div>
+    <div class="section-status">
+        <div class="temperature-status">
+            24 &#176c &nbsp;&nbsp;&nbsp; 30 &#37;
+            <img src="template/icons/dew_point.svg">
+        </div>
+        <div class="ventilation-status">
+            <img src="template/icons/fan_speed.svg">
+            <img src="template/icons/signal.svg">
+            <img src="template/icons/snowflake.svg">
+            <img src="template/icons/sun.svg">
+            <img src="template/icons/additional.svg">
+            <img src="template/icons/mario.svg">
+            <span>18 &#176c</span>
+            <img src="template/icons/Alarm Clock.svg">
+            <img src="template/icons/shutdown-off.svg">
+        </div>
+        <div class="connection-status">
+            <img src="template/icons/Notification.svg">
+            <img src="template/icons/disconnected.svg">
+            <img src="template/icons/shield.svg">
+            <img src="template/icons/cloud_backup_restore.svg">
+        </div>
+        <div class="camera-status">
+            <div>
+                <button>
+                    <img src="template/icons/portrait.svg">
+                    <p>
+                        آیفون
+                    </p>
+                </button>
+                <button>
+                    <img src="template/icons/dome_camera.svg">
+                    <p>
+                        نظارت
+                    </p>
+                </button>
+            </div>
+            <div>
+                <button>
+                    <img src="template/icons/chevron_down.svg">
+
+                </button>
+            </div>
+
+        </div>
+    </div>
+</header>
+<main>
+  @Body
+</main>
+<div class="bottom-menu">
+    <div class="bottom-menu-details">
+        <div class="bottom-menu-logo">
+            <svg class="svg-inline--fa fa-music" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="music" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path></svg><!-- <i class="fa-solid fa-music"></i> Font Awesome fontawesome.com -->
+        </div>
+        <div class="bottom-menu-description">امنیت</div>
+    </div>
+    <div class="bottom-menu-details">
+        <div class="bottom-menu-logo">
+            <svg class="svg-inline--fa fa-music" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="music" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path></svg><!-- <i class="fa-solid fa-music"></i> Font Awesome fontawesome.com -->
+        </div>
+        <div class="bottom-menu-description">خانه</div>
+    </div>
+    <div class="bottom-menu-details">
+        <div class="bottom-menu-logo">
+            <svg class="svg-inline--fa fa-music" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="music" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path></svg><!-- <i class="fa-solid fa-music"></i> Font Awesome fontawesome.com -->
+        </div>
+        <div class="bottom-menu-description">خانه</div>
+    </div>
+    <div class="bottom-menu-details">
+        <div class="bottom-menu-logo">
+            <svg class="svg-inline--fa fa-music" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="music" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path></svg><!-- <i class="fa-solid fa-music"></i> Font Awesome fontawesome.com -->
+        </div>
+        <div class="bottom-menu-description">خانه</div>
+    </div>
+    <div class="bottom-menu-details">
+        <div class="bottom-menu-logo">
+            <svg class="svg-inline--fa fa-music" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="music" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path></svg><!-- <i class="fa-solid fa-music"></i> Font Awesome fontawesome.com -->
+        </div>
+        <div class="bottom-menu-description">خانه</div>
+    </div>
 </div>
+
+@code{
+    bool openFullScreen = false;
+    private async Task FullScreen()
+    {
+        if (!openFullScreen)
+        {
+            openFullScreen = true;
+            await Js.InvokeVoidAsync("openFullScreen");
+        }
+        else
+        {
+            openFullScreen = false;
+            await Js.InvokeVoidAsync("closeFullscreen");
+
+        }
+    }
+}

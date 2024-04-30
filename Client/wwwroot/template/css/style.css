@@ -1,0 +1,584 @@
+
+/*#region RESET CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*#endregion RESET CSS */
+
+/*#region font */
+@font-face {
+    font-family: Shabnam;
+    src: url('../fonts/Shabnam-Medium.eot');
+    src: url('../fonts/?#iefix') format('embedded-opentype'), url('../fonts/Shabnam-Medium.woff2') format('woff2'), url('../fonts/Shabnam-Medium.woff') format('woff'), url('../fonts/Shabnam-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Shabnam';
+    /* height: 1000px; */
+    /* direction: rtl; */
+}
+
+.h6, h6 {
+    font-size: 1rem;
+}
+/*#endregion font*/
+
+/*#region general */
+.show-flex{
+    display:flex
+}
+.hide {
+    display: none
+}
+/*#endregion general */
+
+/*#region header */
+
+/*#region general */
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: white;
+    
+}
+
+@media (max-width:499px) {
+    .header img {
+        width: 8vw;
+        height: 7vw;
+        /* width: 100%;
+        height: 100%;
+        max-width: 30px;
+        max-height: 30px;
+        height: auto;
+        object-fit: cover;*/
+    }
+
+    p {
+        font-size: 10px;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        padding-top: 260px;
+    }
+}
+
+@media (min-width:500px) {
+    .header img {
+        width: 100%;
+        height: 100%;
+        max-width: 40px;
+        max-height: 40px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 1200;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        padding-top: 300px;
+    }
+}
+/*#endregion general*/
+
+/*#region section-menu */
+.section-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.section-menu-right {
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+    .section-menu-right button {
+        margin-right: 10px;
+    }
+
+.section-menu-left {
+    justify-content: start;
+    justify-items: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+    .section-menu-left a {
+    }
+
+.section-menu button {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border 0.15s,background-color 0.15s;
+}
+
+    .section-menu button:active {
+        border: none;
+        background-color: rgb(220, 220, 220);
+    }
+/* .section-menu img:active {
+
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+  } */
+
+/*#endregion section-menu */
+
+/*#region section-status */
+.section-status {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 10px;
+    margin: 0px 6px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 14px;
+    box-shadow: 1px 1px rgba(185, 71, 71, 0.05), -6em 0 .4em rgba(0, 0, 0, 0.05);
+}
+/*#region temperature-status */
+
+.temperature-status {
+    margin-bottom: 10px;
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    text-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: rgb(146, 146, 146);
+    padding-bottom: 9px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*#endregion temperature-status */
+
+/*#region ventilation-status */
+.ventilation-status {
+    margin-bottom: 22px;
+    background-color: black;
+    color: #b3b3b3a7;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-between;
+    border-radius: 14px;
+    padding: 10px 3px;
+    /* flex-wrap: wrap; */
+}
+
+    .ventilation-status span {
+        padding: 6px;
+        text-wrap: nowrap;
+    }
+/*#endregion ventilation-status */
+
+/*#region connection-status */
+.connection-status {
+    margin-bottom: 22px;
+    text-wrap: nowrap;
+    overflow-x: auto;
+    /* background-color: blueviolet;     */
+}
+
+    .connection-status img {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+/*#endregion connection-status */
+
+/*#region camera-status */
+.camera-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-wrap: nowrap;
+    overflow-x: auto;
+    /* flex-wrap: wrap; */
+}
+    .camera-status p {
+        font-size: 90%;
+        font-weight:bold
+    }
+    .camera-status button {
+        /* background-color: white; */
+        min-height: 48.67px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: border 0.15s,background-color 0.15s;
+        box-shadow: 1px 2px 3px rgba(255, 221, 221, 0.05);
+        background-color: rgb(248, 248, 248);
+        
+    }
+
+        .camera-status button:active {
+            border: none;
+            background-color: rgb(220, 220, 220);
+        }
+
+    .camera-status div:nth-of-type(1) button:nth-of-type(1) {
+        margin-right: 20px;
+    }
+
+/*#endregion camera-status */
+
+/*#endregion section-status */
+
+/*#endregion header */
+
+/*#region spaces */
+
+.spaces {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow-x: auto;
+
+}
+
+    .spaces-button {
+        margin: 10px;
+        padding: 8px 11px;
+        font-size: 3.5vw;
+        font-weight: 550;
+        white-space: nowrap;
+        text-align: center;
+        transition: all 0.2s;
+        color: #000000;
+        background-color: #ffffff;
+        border-radius: 2em;
+        border: none;
+        box-sizing: border-box;
+        box-sizing: border-box;
+        text-decoration: none;
+        box-shadow: rgba(100, 100, 111, 0.2) 5px 1px 10px 0px;
+    }
+
+        .spaces-button-active{
+            background-color: #4eb5f1;
+            color: #FFFFFF;
+        }
+
+    .spaces::-webkit-scrollbar {
+        display: none;
+    }
+@media(min-width:700px) {
+    .spaces-button {
+        font-size: 1vw;
+    }
+}
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .spaces {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    /*#endregion spaces */
+
+/*#region  CONTROLL BAR */
+.controll-bar {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content:space-around;*/
+    margin-bottom: 30px;
+    gap: 17px;
+
+}
+
+.position {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*min-width: 10%;*/
+    max-width: 110px;
+    min-height: 95px;
+    /*max-height: 120px;*/
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin: 10px 4px;
+    text-wrap: nowrap;
+    gap: 10px;
+    overflow: scroll;
+    font-size: 5vw;
+    padding: 10px 40px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-family: 'Shabnam';
+}
+
+
+    .position p {
+        margin-top: 13px;
+        font-size: 3.5vw;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    @media(min-width:700px) {
+        .position {
+            font-size: 2vw;
+        }
+
+            .position p {
+                font-size: 1vw;
+            }
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .position::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .position {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .location {
+    }
+
+.position:hover {
+    cursor: pointer;
+    border: 1px solid rgb(112 112 112);
+    transition: all 0.3s;
+}
+.position:focus {
+    border:none;
+    transition: all 0.3s;
+}
+
+    .prevent-select {
+        user-select: none;
+    }
+
+
+
+    .icon {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .i {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+    }
+
+    .buttonIndex {
+        border: none;
+        background-color: white;
+        color: black;
+        font-family: 'Shabnam';
+    }
+
+    .selected-elem {
+        color: #fff;
+        border: none;
+        background-color: #4eb5f1;
+    }
+
+    p {
+        font-size: 8px;
+    }
+
+    p,
+    h6 {
+        user-select: none;
+    }
+    /*#endregion CONTROLL BAR */
+
+/*#region bottom menu */
+    .bottom-menu {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 5px 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: white;
+        /* margin-top: 25px; */
+    }
+
+    .bottom-menu-details {
+        width: 18%;
+    }
+
+
+    /*#endregion bottom menu */
+
+
+body .temperature-status .ventilation-status temperature-status {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.temperature-status,::-webkit-scrollbar {
+    display: none;
+}
